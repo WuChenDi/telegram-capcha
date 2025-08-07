@@ -10,7 +10,7 @@
     "url": "https://github.com/WuChenDi/shortener.git"
   },
   "scripts": {
-    "dev": "bun --hot src/index.ts",
+    "dev": "NODE_ENV=dev bun --hot src/index.ts",
     "start": "bun src/index.ts",
     "build": "bun build src/index.ts --outdir dist --target browser",
     "clean": "bash ./scripts/clean.sh",
