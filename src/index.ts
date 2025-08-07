@@ -1,13 +1,12 @@
 import 'dotenv/config'
 
 import '@/global'
-import type { Context } from 'telegraf'
-import { Telegraf } from 'telegraf'
+import { Telegraf, type Context } from 'telegraf'
 import { message } from 'telegraf/filters'
-import { createCaptchaSession, verifyCaptcha } from '@/captcha'
 import { eq, and, sql } from 'drizzle-orm'
-import { db } from '@/db'
+import { createCaptchaSession, verifyCaptcha } from '@/captcha'
 import { messageLogs, users, type NewMessageLog, type NewUser } from '@/database/schema'
+import { db } from '@/db'
 
 const bot = new Telegraf(process.env.BOT_TOKEN!)
 
@@ -344,7 +343,7 @@ bot.on('message', async (ctx) => {
 
   logger.info('Message allowed and logged', {
     userId: user.id,
-    messageLog: messageLog,
+    messageLog,
     messageLength: messageLog.messageText?.length || 0,
     action: 'messageAllowed',
   })
