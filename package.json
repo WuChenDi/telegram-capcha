@@ -1,0 +1,41 @@
+{
+  "name": "telegram-capcha",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A Telegram bot that requires users to complete a CAPTCHA verification before they can send messages in a group.",
+  "author": "wudi <wuchendi96@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WuChenDi/shortener.git"
+  },
+  "scripts": {
+    "dev": "bun --hot src/index.ts",
+    "start": "bun src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target browser",
+    "clean": "bash ./scripts/clean.sh",
+    "db:studio": "drizzle-kit studio --port 3001 --host 0.0.0.0",
+    "db:pull": "drizzle-kit pull",
+    "db:push": "drizzle-kit push",
+    "db:gen": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:up": "drizzle-kit up"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.15.10",
+    "canvas": "^3.1.2",
+    "dotenv": "^17.2.1",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.4",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^24",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}
