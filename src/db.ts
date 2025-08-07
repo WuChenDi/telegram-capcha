@@ -13,6 +13,8 @@ class DatabaseManager {
     }
     DatabaseManager.instance = this
 
+    logger.info('Creating DatabaseManager instance')
+
     const client = createClient({
       url: process.env.LIBSQL_URL!,
       authToken: process.env.LIBSQL_AUTH_TOKEN!,
