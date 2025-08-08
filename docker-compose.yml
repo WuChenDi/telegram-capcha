@@ -1,0 +1,21 @@
+services:
+  telegram-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: telegram-captcha-bot
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - BOT_TOKEN=${BOT_TOKEN}
+      - LIBSQL_URL=${LIBSQL_URL}
+      - LIBSQL_AUTH_TOKEN=${LIBSQL_AUTH_TOKEN}
+    volumes:
+      - ./logs:/usr/src/app/logs
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true
+    name: traefik
